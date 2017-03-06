@@ -1,0 +1,16 @@
+*root kasutajana:
+apt-get install git
+*user:
+a) 
+git config --global user.name "Ees ja perenimi"
+git config --global user.email 
+git config -global core.editor nao
+
+b)
+mkdir skriptimine
+
+c)
+cd skriptimine
+
+d)
+git init
