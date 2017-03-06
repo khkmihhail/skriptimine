@@ -19,3 +19,7 @@ remote seadistamine:
 a) git remote add (name) (aadress)
 b) git remote kontroll | git remote -v
 
+kasutamine:
+a) git add failnimi
+b) git commit -am ""
+c) git push -uf kausta nimi branch
