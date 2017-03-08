@@ -1,0 +1,9 @@
+#!/bin/bash
+
+eesnimi="Mihhail"
+perenimi="Matisinets"
+grupp="IS216"
+
+echo "Tere ma olen $eesnimi $perenimi ja minu õpperühm on $grupp"
+echo "Mulle meeldib selle aine ja ma olen huvitanud skriptimise koostamine"
+
