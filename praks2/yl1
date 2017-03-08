@@ -1,0 +1,7 @@
+#!/bin/bash
+# tervitusskript
+name="Mihhail"
+
+echo "Tere, $name!"
+
+#lõpp
