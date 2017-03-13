@@ -1,0 +1,13 @@
+#!/bin/bash
+
+getDate(){
+	date
+
+	return
+	}
+getDate
+
+#kell="10:46"
+#kuupaev="13.03.2017"
+
+#echo="Kell on $kell ja kuupaev on $kuupaev"
