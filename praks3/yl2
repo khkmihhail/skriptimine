@@ -1,0 +1,15 @@
+#!/bin/bash
+
+getDate() 
+{ 
+	date
+	return
+}
+getDate
+
+kuu=$(date +"%B %Y")
+echo "Calendar of the "
+echo "======================="
+kalendar=$(cal | tail -n 7)
+echo "$kalendar"
+echo "======================="
