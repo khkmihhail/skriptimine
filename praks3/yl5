@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Sisesta oma eesnimi: " eesnimi
+read -p "Sisesta oma perenimi: " perenimi
+read -p "Sisesta oma pikkus: " pikkus
+read -p "Sisesta oma kaal: " kaal
+
+echo "$eesnimi $perenimi kehamassiindeks on: "
+indeks=`echo "scale=5;($kaal / ($pikkus ^ 2))" | bc`
+echo $indeks
