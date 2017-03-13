@@ -1,13 +1,14 @@
 #!/bin/bash
 
-getDate(){
+getDate()
+{
 	date
 
 	return
-	}
+}
 getDate
 
-#kell="10:46"
-#kuupaev="13.03.2017"
 
-#echo="Kell on $kell ja kuupaev on $kuupaev"
+#kell=$(date +"%H:%M")
+#kuupaev=$(date +"%d.%m.%Y")
+#echo"kell on $kell ja kuupaev on $kuupaev"
