@@ -1,0 +1,10 @@
+#!/bin/bash
+#Sisestame vaaartused
+read -p "Sisesta vaartus A: " A
+read -p "Sisesta vaartus B: " B
+
+echo "Kolmas kuljend vordub: "
+#arvutame C
+echo "scale=2;sqrt(($A ^ 2) + ($B ^ 2))" | bc
+
+
