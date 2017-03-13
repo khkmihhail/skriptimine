@@ -1,0 +1,16 @@
+#!/bin/bash
+#arvutame 'Heroni' abil
+
+read -p "Sisesta A vaartus: " A
+read -p "Sisesta B vaartus: " B
+read -p "Sisesta C vaartus: " C
+
+#arvutame perimeetr
+#p = (a+b+c)/2
+echo -n "p võrdub: "
+p=`echo "(($A + $B + $C) / 2)" | bc`
+echo $p
+#arvutame pindal
+echo -n "Kolmnurga pindal on: "
+s=`echo "scale=2;sqrt($p * ($p - $A) * ($p - $B) * ($p - $C))" | bc`
+echo $s
