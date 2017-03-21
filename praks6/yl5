@@ -28,6 +28,9 @@ elif [ $ulekaal_t -eq 1]; then
 #rasvumine
 elif [ $rasvumine_t -eq 1]; then
 	echo "Rasvumine. Tuleb midagi teha."
+#kui midagi ei sisastud
+elif [ -z $kaal ] & [ -z $pikkus]; then
+	echo "Sisetsa andmed."
 else
 	echo "Skript ei tööta."
 fi
