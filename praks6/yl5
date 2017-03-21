@@ -1,10 +1,33 @@
 #!/bin/bash
+#Väljastame meie kehaindeks
+#Algus
 
 read -p "Sisesta oma eesnimi: " eesnimi
 read -p "Sisesta oma perenimi: " perenimi
 read -p "Sisesta oma pikkus: " pikkus
 read -p "Sisesta oma kaal: " kaal
-
+#arvutamine
 echo "$eesnimi $perenimi kehamassiindeks on: "
 indeks=`echo "scale=5;($kaal / ($pikkus ^ 2))" | bc`
 echo $indeks
+#erinevad väljundid
+alakaal_t=$(echo "$indeks < 19" | bc)
+normalkaal_t=$(echo "$indeks >= 19 && $indeks < 25" | bc)
+ulekaal_t=$(echo "$indeks >= 25 && $indeks < 30" | bc)
+rasvumine_t=$(echo "$indeks >=30" | bc)
+#if-then statements
+#alakaal
+if [ $alakaal_t -eq 1 ]; then
+	echo "Alakaal"
+#normalkaal 
+elif [ $normalkaal_t -eq 1]; then
+	echo "Normalkaal"
+#ulekaal
+elif [ $ulekaal_t -eq 1]; then
+	echo "Ülekaal. See võiks juba olla ohtlik"
+#rasvumine
+elif [ $rasvumine_t -eq 1]; then
+	echo "Rasvumine. Tuleb midagi teha."
+else
+	echo "Skript ei tööta."
+fi
