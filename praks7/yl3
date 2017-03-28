@@ -1,8 +1,11 @@
 #!/bin/bash
 #while loop
+summa=0
 n=1
 while [ $n -le 5 ]
 do
-	echo $n
+	read -p "Sisesta $n omanumbrid:" n2
+	summa=$(($summa + $n2))
 	n=$(($n + 1))
 done
+echo "Arvude summa on $summa."
