@@ -3,10 +3,10 @@
 #numbrite väljastamine ja summ
 
 summa=0
+echo -n "Arvude "
 for((n = 1; n <= 5; n++))
 do
-	echo -n $n
+	echo -n "$n "
 	summa=$(($summa + $n))
-	echo " summa = $summa"
 done
-echo "Arvude summa on $summa."
+echo "summa on $summa"
