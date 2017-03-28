@@ -1,12 +1,38 @@
 #!/bin/bash
+#nimetami uus fail
 
-read -p "Sisesta faili nimi: " file
+#read -p "Sisesta faili nimi: " file
 
-if [ $# -ne 1 ]
-then
-	echo "Juhend"
+#skript algus
+if [ $# -ne 1 ]; then
+	echo "$0 fail"
 	exit 1
 else
-	echo >> $file.txt
+#kontrollime kas on fail või ei ole.
+ file=$1
+ if [ -f $file ]; then
+	echo "Fail on juba olemas."
+
+  if ! [ -s $file ]; then
+	echo "Antud fail on tühi."
+  else
+	echo "Antud $file ei ole tühi."
+  fi
+#
+  echo "Kui ei soovi ümber kirjutada"
+  read -p "Sisesta failnimi:" uusnimi
+ fi
+#
+ if [ -n "$uusnimi" ]; then
+	file=$uusnimi
+ fi
+	touch $file
+#kas fail on loodud või mitte.
+ if [ $? -eq 0 ]; then
+	echo "Fail $file on loodud."
 	exit 0
+ else
+	echo "Midagi takistab."
+	exit 1
+ fi
 fi
