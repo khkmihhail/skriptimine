@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Sisesta faili nimi: " file
+
+if [ $# -ne 1 ]
+then
+	echo "Juhend"
+	exit 1
+else
+	echo >> $file.txt
+	exit 0
+fi
