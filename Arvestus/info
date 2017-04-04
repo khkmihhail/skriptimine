@@ -1,0 +1,23 @@
+#!/bin/bash
+#Mihhail Matisinets
+#IS216
+#Skripti nimi on Info
+#
+#Skript peab tervitame sisselogitud kasutajad, väljsta kuupäev ja aeg
+#Skripti algus
+echo -n "Tere, "
+echo -n `whoami`
+echo "!"
+
+read -p "Vajutada Enter."
+#väljastame tänane kuupäev
+getDate()
+{
+	date
+	return
+}
+getDate
+
+kuu=$(date +"%B %Y")
+kalendar=$(cal | tail -n 7)
+echo "$kalendar"
