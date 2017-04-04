@@ -1,0 +1,23 @@
+#!/bin/bash
+#Mihhail Matisinets
+#IS216
+#skript kustutama failid, kontrollida antud faili olemasolu
+
+
+#skript algus
+
+read -p "Kirjuta failinimi mida tahab kustuda: " file
+
+if [ -f "$file" ]; then
+	rm -f $file
+	echo "Fail on kustatatud."
+#kui midagi ei sisastud, siis tuleb välja lühike juhend
+elif [ -z "$file" ]; then
+	echo "Sisesta faili nimi."
+#muid
+else
+	echo "Fail selle nimega ei ole."
+fi
+#väljasta nimekiri
+read -p "Vajuta Enter, et näeb failide nimekiri."
+ls
