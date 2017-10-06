@@ -1,0 +1,14 @@
+#!/bin/bash
+#lisa kasutajad
+
+failnimi='kasutajad_fail'
+failrida='cat $failnimi'
+parool='kasutajad_parool'
+
+for nimi in  $failrida
+do
+	useradd $nimi -m -s /bin/bash
+	sh kasutajad_parool $failnimi
+	echo "$nimi"
+	cat /etc/passwd | grep $nimi
+done 
