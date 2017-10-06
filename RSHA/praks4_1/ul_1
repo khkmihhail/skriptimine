@@ -1,0 +1,21 @@
+#loome antud nimehga kasutajat andmebaasi serverisse
+#Mihhhail Matisinets IS216
+#!/bin/bash
+#kasutaja nimi ja parool parametrid
+#
+nimi=$1
+parool=$(pwgen 8 1)
+
+#mysql 
+mysql -e "CREATE DATABASE ${nimi}"
+mysql -e "CREATE USER ${nimi}@localhost IDENTIFIED BY '${parool}';"
+mysql -e "GRAN ALL PRIVILEGES ON ${nimi}.* TO '${nimi}'@'localhost';"
+mysql -e "FLUSH PRIVILEGES;"
+
+#loome konfi fail
+touch /home/$nimi/.my.cnf
+echo "[client]
+user = $nimi
+password = $parool
+host = localhost" > /home/$nimi/.my.cnf
+chmod 0600 /home/$nimi/.my.cnf
