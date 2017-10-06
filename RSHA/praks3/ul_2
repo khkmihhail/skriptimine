@@ -1,0 +1,13 @@
+#!/bin/bash
+#kontrollime kas on olemas "public" kataloog või ei ole
+#kui ei ole, siis loome uus
+for nimi in $(ls /home)
+do
+	ls /home/$nimi | grep public > /dev/null
+	if [ $? -eq 1 ];then
+	mkdir /home/$nimi/public && chown -R $nimi:$nimi /home/$nimi/public && chmod 751 /home/$nimi/public
+
+	else
+		echo "Kataloog on olemas"
+	fi
+done
