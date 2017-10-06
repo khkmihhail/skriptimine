@@ -8,11 +8,7 @@ kasutajad_fail=$1
 
 for nimi in $(cat $kasutajad_fail)
 do
-	mkdir -p /root/home/$nimi
-	useradd -m -d /root/home/$nimi -s /bin/bash $nimi
-	echo "$nimi: "
-	sh kasutajad_fail $nimi
+	useradd -m -s /bin/bash $nimi
+	cat /etc/passwd | grep $nimi
 done
-
- 
 

@@ -1,12 +1,13 @@
 #!/bin/bash
-#lisame kasutaja ja tema kataloog
+#lisame kasutajale tema kataloog
 nimi=$1
+useradd -m  $nimi
 mkdir /home/$nimi/public && chown -R $nimi:$nimi /home/$nimi/public && chmod 751 /home/$nimi/public
-useradd -
 
 if [ $? -eq 0 ]; then
 	echo "Kodukataloog public on loodud"
 	cat /etc/passwd | grep $nimi
+	ls -la /home/$nimi
 else 
 	echo "Kood on valesti kirjatatud"
 fi
